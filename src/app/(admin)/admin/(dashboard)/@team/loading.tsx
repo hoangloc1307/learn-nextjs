@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
     <div className="flex justify-center items-center h-full">
-      Admin is loading...
+      Team is loading...
     </div>
   );
 }

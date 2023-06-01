@@ -1,10 +1,24 @@
 import Link from "next/link";
 
-export default function Page() {
+async function getData() {
+  const res = await new Promise<string>((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Website Home Page");
+    }, 1000);
+  });
+
+  return res;
+}
+
+export default async function Page() {
+  const data = getData();
   return (
-    <div>
-      <h1>Website Home Page</h1>
-      <Link href="/admin">Go to admin</Link>
-    </div>
+    <section>
+      <h1>{data}</h1>
+      <div className="flex gap-5 flex-wrap">
+        <Link href="/admin">Go to admin</Link>
+        <Link href="/blog">Go to blog</Link>
+      </div>
+    </section>
   );
 }

@@ -1,7 +1,7 @@
 async function getData() {
   const res = await new Promise<string>((resolve, reject) => {
     setTimeout(() => {
-      resolve("Admin Page");
+      resolve("Analytics Page");
     }, 1000);
   });
 
@@ -11,7 +11,7 @@ async function getData() {
 export default async function Page() {
   const data = await getData();
   return (
-    <div className="bg-green-500 flex items-center justify-center flex-grow">
+    <div className="bg-red-500 h-full flex justify-center items-center">
       {data}
     </div>
   );

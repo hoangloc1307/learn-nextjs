@@ -1,5 +1,4 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
-import "@/styles/globals.css";
 
 export default function WebsiteLayout({
   children,
@@ -7,11 +6,9 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi">
-      <body className="min-h-screen flex items-stretch">
-        <Sidebar />
-        {children}
-      </body>
-    </html>
+    <main className="flex h-screen overflow-auto">
+      <Sidebar />
+      <div className="flex-grow overflow-auto">{children}</div>
+    </main>
   );
 }
